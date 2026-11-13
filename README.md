@@ -1,20 +1,25 @@
-# MINS Permit Status Tracker – GitHub Pages Starter
+# URC MINS Permit Status Tracker — Modular GitHub Frontend
 
-This package contains the static frontend starter for the GitHub Pages site.
+Brand: URC Construction Pvt. Ltd.
 
-## Upload to your repository
+## Structure
+- `index.html` — GitHub Pages landing page
+- `css/style.css` — responsive styling and animation
+- `js/config.js` — current Google Apps Script Web App URL
+- `js/app.js` — frontend launch behaviour
+- `assets/urc-logo.png` — URC logo asset
 
-1. Extract this ZIP file on your computer.
-2. Open https://github.com/bothishankar/mins-permit-status-tracker-
-3. Select **Add file → Upload files**.
-4. Upload `index.html` and `README.md` from the extracted folder (not the ZIP itself).
-5. Select **Commit changes**.
-6. Open **Settings → Pages** and confirm `main` branch and `/(root)`.
+## GitHub Pages deployment
+1. Back up the current repository contents.
+2. Upload the contents of this folder to the repository root (not the folder itself).
+3. Ensure the homepage is named exactly `index.html`.
+4. Commit changes and wait for GitHub Pages to publish.
+5. Open `https://bothishankar.github.io/mins-permit-status-tracker-/`.
 
-## Important – not yet connected to live data
+## Backend and data
+The launch button opens the existing Google Apps Script Web App in a new tab. Google Apps Script remains the application backend; Google Sheets and Google Drive remain the existing data/document stores. This frontend package does not migrate or modify backend code or stored records.
 
-This is the frontend starter only. It does not yet connect to the existing Google Apps Script, Google Sheets, or Drive. Login, live dashboard data, permit editing, ZIP upload, PDF downloads, and reports will not work until the secure backend/API integration is implemented and tested.
+The Apps Script URL currently configured in `js/config.js` is the URL previously supplied in this conversation. If that URL displays a Google error, copy the current Web App URL from Apps Script → Deploy → Manage deployments and replace `appUrl` in `js/config.js`, then commit again.
 
-Do not add passwords, setup keys, API secrets, or Google credentials to this public repository.
-
-Your existing Apps Script deployment and spreadsheet should remain unchanged while integration is prepared.
+## Important
+This is the modular branded GitHub frontend/launcher, not a direct cross-origin API implementation. Existing login, ZIP processing, permit updates, document access and reports continue to run in the Apps Script application. Test the Web App URL independently before relying on the GitHub launch button.
