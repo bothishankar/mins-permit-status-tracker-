@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MINS Permit Status Tracker</title>
+<meta name="theme-color" content="#10233f">
+<style>
+:root{--navy:#10233f;--blue:#2457a6;--bg:#f3f6fb;--ink:#17263d;--muted:#6b7890;--green:#16834b;--red:#c83b43;--line:#e4eaf2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:14px Inter,Segoe UI,Arial,sans-serif;color:var(--ink)}
+.splash{position:fixed;inset:0;background:linear-gradient(135deg,#0b1b31,#2457a6);color:white;display:grid;place-items:center;z-index:10;animation:fadeOut .7s ease 1.5s forwards}
+.splash-inner{text-align:center;animation:rise .8s ease}.logo{width:64px;height:64px;border:1px solid #ffffff66;border-radius:18px;display:grid;place-items:center;margin:0 auto 18px;font-weight:800;font-size:23px;background:#ffffff12}
+.splash h1{font-size:clamp(21px,4vw,32px);letter-spacing:.08em;margin:0}.splash p{opacity:.75;margin-top:10px}
+@keyframes fadeOut{to{opacity:0;visibility:hidden;pointer-events:none}}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+header{background:linear-gradient(110deg,#10233f,#2457a6);color:#fff;padding:19px clamp(16px,4vw,44px);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:13px}.brandmark{width:42px;height:42px;border:1px solid #ffffff55;border-radius:12px;display:grid;place-items:center;font-weight:800}
+h1{font-size:18px;margin:0;letter-spacing:.04em}header small{opacity:.75}.wrap{max-width:1440px;margin:26px auto;padding:0 18px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}.top h2{margin:0 0 5px;font-size:22px}.muted{color:var(--muted)}
+button{border:0;border-radius:9px;padding:11px 15px;background:var(--blue);color:white;font-weight:650;cursor:pointer}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button.secondary{background:#e8eef8;color:#19365f}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card,.stat{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 6px 22px #10233f0a}
+.stat{padding:18px;transition:.2s}.stat:hover,.set:hover{transform:translateY(-2px);box-shadow:0 10px 24px #10233f12}.stat small{color:var(--muted)}.stat b{display:block;font-size:29px;margin-top:8px}
+.card{padding:20px;margin-top:16px}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}.card h3{margin:0;font-size:16px}
+.sets{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}.set{border:1px solid var(--line);border-radius:12px;padding:15px;cursor:pointer;transition:.2s;background:#fff}.set strong{font-size:15px}.set p{margin:9px 0 5px}.progress{height:6px;background:#edf1f6;border-radius:9px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;background:var(--green)}
+input{border:1px solid #d6deea;border-radius:9px;padding:11px 12px;font:inherit;min-width:240px;max-width:100%}
+.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:800px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid #edf0f5;white-space:nowrap}th{background:#f6f8fb;color:#66748a;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.pill{border-radius:30px;padding:5px 9px;font-size:11px;font-weight:800}.done{color:var(--green);background:#e5f6ec}.pending{color:var(--red);background:#ffeaeb}
+.notice{padding:13px 15px;border-radius:10px;background:#fff8e7;color:#775719;border:1px solid #f2e4bc;line-height:1.5}
+footer{text-align:center;color:#8a96a8;padding:25px;font-size:12px}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{padding:15px}.wrap{padding:0 12px}.stat b{font-size:24px}}
+@media(max-width:420px){.grid{grid-template-columns:1fr 1fr}.brandmark{display:none}h1{font-size:15px}}
+</style></head>
+<body>
+<div class="splash"><div class="splash-inner"><div class="logo">MINS</div><h1>PERMIT STATUS TRACKER</h1><p>Daily site requests · Set-wise vehicle monitoring</p></div></div>
+<header><div class="brand"><div class="brandmark">M</div><div><h1>MINS PERMIT STATUS TRACKER</h1><small>Daily site requests · Set-wise vehicle permit monitoring</small></div></div><button onclick="alert('Login will be enabled after the secure Apps Script API is connected.')">Admin / User Login</button></header>
+<main class="wrap">
+ <div class="top"><div><h2>Public Permit Dashboard</h2><div class="muted">Read-only overview · Latest upload Sets will appear here</div></div><input id="search" placeholder="Search Set number" oninput="filterSets()"></div>
+ <div class="grid" id="stats"><div class="stat"><small>Total E-Way Bills</small><b>—</b></div><div class="stat"><small>Completed</small><b>—</b></div><div class="stat"><small>Pending</small><b>—</b></div><div class="stat"><small>Completion</small><b>—</b></div></div>
+ <section class="card"><div class="cardhead"><h3>Latest Upload · Set List</h3><span class="muted" id="lastUpload">Waiting for data connection</span></div><div id="sets" class="sets"><div class="notice">The GitHub Pages design is ready. Connect the secure Google Apps Script API to display live Set data.</div></div></section>
+ <section class="card"><div class="cardhead"><h3 id="recordsTitle">Permit Records</h3><button class="secondary" onclick="showAll()">Show all</button></div><div class="tablewrap"><table><thead><tr><th>Set</th><th>Vehicle No.</th><th>Delivery Challan No.</th><th>E-Way Bill No.</th><th>Permit No.</th><th>Status</th></tr></thead><tbody id="rows"><tr><td colspan="6" class="muted">Live records will appear after API integration.</td></tr></tbody></table></div></section>
+ <div class="notice" style="margin-top:16px"><b>Integration pending:</b> This is the GitHub Pages frontend starter. Login, live data, editing, ZIP upload and document downloads are not connected yet. Do not enter real passwords on this page until the secure API integration is completed.</div>
+</main><footer>MINS Permit Status Tracker · Secure access and data services remain on Google Apps Script</footer>
+<script>
+let latestSets=[];
+function filterSets(){const q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.set').forEach(x=>x.style.display=x.textContent.toLowerCase().includes(q)?'':'none')}
+function showAll(){document.getElementById('recordsTitle').textContent='Permit Records'}
+</script>
+</body></html>
