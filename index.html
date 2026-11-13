@@ -29,7 +29,9 @@
     <section class="app-section" id="application">
       <div class="section-heading"><div><div class="eyebrow">APPLICATION ACCESS</div><h2>Open MINS Permit Tracker</h2><p>Your existing Google Apps Script application remains the secure application engine.</p></div><span class="secure-tag">SECURE APP</span></div>
       <div class="app-panel"><div class="app-panel-head"><span class="pulse"></span><span>URC MINS APPLICATION</span><span class="head-spacer"></span><span class="head-note">Google Apps Script</span></div>
-        <div class="app-placeholder"><div class="app-mark">URC</div><h3>Ready to manage permits?</h3><p>Launch the existing application in a new tab to sign in, review Sets and update permit status.</p><a class="primary" id="launchButton" target="_blank" rel="noopener">Open secure application <span>↗</span></a><small>If the application does not open, verify the current Web App URL and deployment access settings.</small></div>
+        <div class="embedded-toolbar"><span>Live permit application</span><a class="secondary" id="openNewTab" target="_blank" rel="noopener">Open in new tab ↗</a></div>
+        <div class="embedded-frame-wrap"><iframe id="permitAppFrame" title="URC MINS Permit Status Tracker" loading="lazy" allow="clipboard-read; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+        <div class="embed-help" id="embedHelp">If the application does not appear, use “Open in new tab” to test the Apps Script deployment.</div>
       </div>
     </section>
     <footer><span>© <span id="year"></span> URC CONSTRUCTION PVT. LTD.</span><span>MINS PERMIT STATUS TRACKER <b>•</b> CONTROL WITH CLARITY</span></footer>
