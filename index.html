@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10243e">
+<title>URC | MINS Permit Status Tracker</title>
+<style>
+:root{--navy:#10243e;--blue:#18569a;--green:#078348;--ink:#172b43;--muted:#6d7d90;--bg:#f3f6fa}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+body{overflow:hidden}.top{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 26px;background:linear-gradient(110deg,#0d233b,#1b5798);color:#fff;box-shadow:0 6px 24px #10243e30;position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:15px;min-width:0}.logo{width:88px;height:58px;object-fit:contain;background:#fff;border-radius:10px;padding:3px;box-shadow:0 3px 12px #0002}
+.brandtext{min-width:0}.brandtext strong{display:block;font-size:16px;letter-spacing:.45px}.brandtext span{display:block;margin-top:4px;font-size:11px;color:#d6e4f1;letter-spacing:.7px}
+.actions{display:flex;align-items:center;gap:10px}.pill{text-decoration:none;color:#fff;border:1px solid #ffffff66;background:#ffffff13;border-radius:9px;padding:10px 14px;font-size:12px;font-weight:650;transition:.2s}.pill:hover{background:#ffffff2a;transform:translateY(-1px)}
+main{height:calc(100% - 76px);position:relative}iframe{display:block;width:100%;height:100%;border:0;background:var(--bg)}
+.loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f7f9fc,#eaf0f7);z-index:1;pointer-events:none;animation:fadeAway 1s ease 2.4s forwards}
+.loadcard{text-align:center;animation:rise .8s ease both}.loadlogo{width:180px;height:105px;object-fit:contain;background:white;border-radius:16px;padding:8px;box-shadow:0 12px 36px #10243e18}
+.loadtitle{margin-top:18px;font-weight:750;letter-spacing:1.2px;color:var(--navy)}.loadsub{margin-top:7px;color:var(--muted);font-size:12px;letter-spacing:1.6px}.line{width:150px;height:3px;background:#dce5ef;margin:20px auto 0;border-radius:9px;overflow:hidden}.line:after{content:"";display:block;height:100%;width:45%;background:var(--green);animation:slide 1.1s ease-in-out infinite}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes slide{from{transform:translateX(-110%)}to{transform:translateX(240%)}}@keyframes fadeAway{to{opacity:0;visibility:hidden}}
+@media(max-width:650px){.top{height:68px;padding:0 12px}main{height:calc(100% - 68px)}.logo{width:64px;height:48px}.brandtext strong{font-size:12px}.brandtext span{font-size:9px;letter-spacing:.2px}.pill{padding:8px 9px;font-size:10px}.actions{gap:5px}}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="brand">
+  <img class="logo" src="urc-logo.png" alt="URC Construction – Building Values">
+  <div class="brandtext"><strong>URC CONSTRUCTION PVT. LTD.</strong><span>MINS PERMIT STATUS TRACKER · VEHICLE & PERMIT MONITORING</span></div>
+ </div>
+ <div class="actions">
+  <a class="pill" href="https://script.google.com/macros/s/AKfycbznCYx-0PM6vUVa5c0-M2ijagMMsyrZUxZPaqTf23weJ590zDswSzulwobCEomjE0N/exec" target="_blank" rel="noopener">Open application ↗</a>
+ </div>
+</header>
+<main>
+ <div class="loading"><div class="loadcard">
+  <img class="loadlogo" src="urc-logo.png" alt="URC logo">
+  <div class="loadtitle">MINS PERMIT STATUS TRACKER</div>
+  <div class="loadsub">DAILY REQUESTS · SET-WISE MONITORING</div>
+  <div class="line"></div>
+ </div></div>
+ <iframe title="URC MINS Permit Status Tracker" src="https://script.google.com/macros/s/AKfycbznCYx-0PM6vUVa5c0-M2ijagMMsyrZUxZPaqTf23weJ590zDswSzulwobCEomjE0N/exec" allow="clipboard-read; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</main>
+</body></html>
