@@ -1,10 +1,22 @@
-# URC MINS Permit Status Tracker – Embedded GitHub Frontend
+# URC MINS Permit Status Tracker – GitHub Pages
 
-Upload the contents of this folder to the root of the existing GitHub Pages repository.
+## Package contents
+- `index.html` – redesigned responsive landing page and application panel
+- `css/style.css` – complete premium navy/green responsive styling
+- `js/config.js` – existing Apps Script Web App URL
+- `js/app.js` – launch links and embedded frame with fallback
+- `assets/urc-logo.png` – supplied URC logo asset
 
-The page embeds the existing Google Apps Script web app using the URL in `js/config.js`.
-The existing Apps Script `doGet()` already uses `HtmlService.XFrameOptionsMode.ALLOWALL`, so no Apps Script code change is required for iframe embedding based on the supplied source.
+## Upload to GitHub
+1. Back up/download your current repository first.
+2. Extract this ZIP.
+3. Upload the CONTENTS of `URC_MINS_Attractive_Design` to the repository root.
+4. Confirm `index.html` is at the root and folders `css`, `js`, `assets` are alongside it.
+5. Commit changes and wait for GitHub Pages deployment.
+6. Open the GitHub Pages site and press Ctrl+Shift+R.
 
-Keep the existing Apps Script deployment and data. Do not run `setupApplication()`.
+## Important application note
+The page attempts to display the existing Apps Script URL in an iframe. Google may block or redirect Apps Script pages when embedded in another domain, especially where Google sign-in or redirects are involved. If the embedded area shows a Google Drive error or remains blank, use the provided **Open in new tab** link. This is a Google hosting/authentication limitation and cannot be fixed by CSS alone.
 
-If the iframe is blocked by browser or Google account policy, use the Open in new tab fallback link and investigate the browser console / deployment response.
+## Backend/data safety
+This package changes GitHub frontend files only. It does not change Apps Script, Google Sheets, Drive folders, permit records, user accounts or passwords.

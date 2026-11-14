@@ -1,40 +1,82 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#102b46"><meta name="description" content="URC Construction Pvt. Ltd. – MINS Permit Status Tracker">
-  <title>URC MINS | Permit Status Control Centre</title>
-  <link rel="icon" href="assets/urc-logo.png"><link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102b46">
+  <meta name="description" content="URC Construction Pvt. Ltd. – MINS Permit Status Tracker">
+  <title>URC MINS | Permit Control Centre</title>
+  <link rel="icon" href="assets/urc-logo.png">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <div class="page-glow glow-one"></div><div class="page-glow glow-two"></div>
   <header class="topbar">
-    <a class="brand" href="#home" aria-label="URC MINS Home"><img src="assets/urc-logo.png" alt="URC Construction logo"><span><strong>URC CONSTRUCTION PVT. LTD.</strong><small>MINS PERMIT STATUS TRACKER</small></span></a>
-    <a class="top-link" href="#application">Open application <span>↗</span></a>
+    <a class="brand" href="#home">
+      <img src="assets/urc-logo.png" alt="URC Construction logo">
+      <span><strong>URC CONSTRUCTION PVT. LTD.</strong><small>MINS PERMIT STATUS TRACKER</small></span>
+    </a>
+    <nav><a href="#features">Features</a><a href="#application">Application</a><a class="nav-cta" id="topLaunch" href="#application">Open Tracker <span>↗</span></a></nav>
   </header>
+
   <main id="home">
     <section class="hero">
-      <div class="eyebrow"><i></i> OPERATIONS • DOCUMENT CONTROL • PERMIT MONITORING</div>
-      <h1>Permit operations.<br><em>Under control.</em></h1>
-      <p class="lead">A centralised workspace for daily site requests, vehicle documents and permit status monitoring.</p>
-      <div class="actions"><a class="primary" href="#application">Launch Permit Tracker <span>→</span></a><a class="secondary" href="#features">Explore features</a></div>
-      <div class="trustline"><span>●</span> Secure access through the existing URC application</div>
-    </section>
-    <section class="feature-grid" id="features">
-      <article class="feature"><b>01</b><div class="feature-icon">▤</div><h2>Daily ZIP Requests</h2><p>Upload site request ZIP files and process document sets.</p></article>
-      <article class="feature"><b>02</b><div class="feature-icon">▦</div><h2>Set-wise Monitoring</h2><p>Review vehicle, challan and E-Way Bill details by Set.</p></article>
-      <article class="feature"><b>03</b><div class="feature-icon">✓</div><h2>Permit Status</h2><p>Track permit numbers with clear DONE and PENDING status.</p></article>
-      <article class="feature"><b>04</b><div class="feature-icon">⇩</div><h2>Reports & Documents</h2><p>Access authorised documents and export operational reports.</p></article>
-    </section>
-    <section class="app-section" id="application">
-      <div class="section-heading"><div><div class="eyebrow">APPLICATION ACCESS</div><h2>Open MINS Permit Tracker</h2><p>Your existing Google Apps Script application remains the secure application engine.</p></div><span class="secure-tag">SECURE APP</span></div>
-      <div class="app-panel"><div class="app-panel-head"><span class="pulse"></span><span>URC MINS APPLICATION</span><span class="head-spacer"></span><span class="head-note">Google Apps Script</span></div>
-        <div class="embedded-toolbar"><span>Live permit application</span><a class="secondary" id="openNewTab" target="_blank" rel="noopener">Open in new tab ↗</a></div>
-        <div class="embedded-frame-wrap"><iframe id="permitAppFrame" title="URC MINS Permit Status Tracker" loading="lazy" allow="clipboard-read; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-        <div class="embed-help" id="embedHelp">If the application does not appear, use “Open in new tab” to test the Apps Script deployment.</div>
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> OPERATIONS · DOCUMENT CONTROL · PERMIT MONITORING</div>
+        <h1>Every permit.<br><em>Under control.</em></h1>
+        <p class="hero-lead">One central workspace to manage daily site requests, vehicle documents and permit status — with clear visibility for your team and Head Office.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#application">Launch Permit Tracker <span>→</span></a>
+          <a class="btn btn-quiet" href="#features">Explore features</a>
+        </div>
+        <div class="hero-note"><span class="shield">✓</span> Existing URC sign-in and permit records are retained</div>
+      </div>
+      <div class="hero-visual" aria-label="Permit monitoring overview illustration">
+        <div class="visual-top"><span class="window-dots"><i></i><i></i><i></i></span><span>PERMIT CONTROL CENTRE</span><b>LIVE WORKSPACE</b></div>
+        <div class="visual-title">Daily permit overview</div>
+        <div class="visual-stats">
+          <div><small>DOCUMENT CONTROL</small><strong>01</strong><span>Daily ZIP requests</span></div>
+          <div><small>SET MONITORING</small><strong>02</strong><span>Vehicle-wise review</span></div>
+        </div>
+        <div class="progress-card"><div class="progress-head"><span>Permit status tracking</span><b>DONE / PENDING</b></div><div class="progress-line"><i></i></div><div class="progress-foot"><span><i class="green"></i> Completed</span><span><i class="red"></i> Pending</span></div></div>
+        <div class="visual-watermark">URC</div>
       </div>
     </section>
-    <footer><span>© <span id="year"></span> URC CONSTRUCTION PVT. LTD.</span><span>MINS PERMIT STATUS TRACKER <b>•</b> CONTROL WITH CLARITY</span></footer>
+
+    <section class="feature-section" id="features">
+      <div class="section-kicker">BUILT FOR DAILY OPERATIONS</div>
+      <div class="section-title-row"><div><h2>Everything in one place.</h2><p>Simple workflows for site teams, users and Head Office monitoring.</p></div><span class="section-index">01 — 04</span></div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-number">01</div><div class="feature-icon">⇧</div><h3>Daily ZIP Requests</h3><p>Upload daily site request ZIP files and process document sets.</p></article>
+        <article class="feature-card"><div class="feature-number">02</div><div class="feature-icon">▦</div><h3>Set-wise Monitoring</h3><p>Review vehicles, Delivery Challans and E-Way Bills by Set.</p></article>
+        <article class="feature-card"><div class="feature-number">03</div><div class="feature-icon">✓</div><h3>Permit Status</h3><p>Update permit numbers in the same row and track DONE or PENDING.</p></article>
+        <article class="feature-card"><div class="feature-number">04</div><div class="feature-icon">⇩</div><h3>Reports & Documents</h3><p>Access permitted documents and export operational reports.</p></article>
+      </div>
+    </section>
+
+    <section class="application-section" id="application">
+      <div class="application-heading">
+        <div><div class="section-kicker">SECURE APPLICATION</div><h2>Work inside your URC tracker.</h2><p>The existing Google Apps Script application remains the engine for login, permissions and live permit data.</p></div>
+        <a class="btn btn-outline" id="openNewTab" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a>
+      </div>
+      <div class="app-shell">
+        <div class="app-shell-bar"><div class="app-brand-mini"><span class="status-pulse"></span> URC MINS APPLICATION</div><span class="app-engine">SECURE WORKSPACE <b>•</b> GOOGLE APPS SCRIPT</span></div>
+        <div class="frame-wrap">
+          <iframe id="permitAppFrame" title="URC MINS Permit Status Tracker" loading="eager" allow="clipboard-read; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <div class="frame-fallback" id="frameFallback">
+            <div class="fallback-icon">URC</div>
+            <h3>Application not visible in this embedded view</h3>
+            <p>Google may restrict Apps Script from displaying inside another website. Your existing application and data remain available through the secure direct link.</p>
+            <a class="btn btn-primary" id="fallbackLaunch" target="_blank" rel="noopener noreferrer">Open secure URC application ↗</a>
+          </div>
+        </div>
+        <div class="app-shell-foot"><span><i class="status-pulse"></i> Existing application connection</span><span>Use your existing URC login credentials</span></div>
+      </div>
+      <p class="security-note"><b>Security note:</b> GitHub hosts the website interface. User authentication, permit records and document permissions continue to be handled by the existing Apps Script application.</p>
+    </section>
   </main>
+
+  <footer><div class="footer-brand"><img src="assets/urc-logo.png" alt=""><span><b>URC CONSTRUCTION PVT. LTD.</b><small>MINS PERMIT STATUS TRACKER</small></span></div><span>CONTROL WITH CLARITY <b>·</b> © <span id="year"></span> URC</span></footer>
   <script src="js/config.js"></script><script src="js/app.js"></script>
-</body></html>
+</body>
+</html>
